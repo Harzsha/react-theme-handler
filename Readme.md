@@ -2,8 +2,8 @@
 
 [![npm version](https://img.shields.io/npm/v/react-theme-handler.svg?style=flat)](https://www.npmjs.com/package/react-theme-handler)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/react-theme-handler)](https://bundlephobia.com/package/react-theme-handler)
-[![license](https://img.shields.io/npm/l/react-theme-handler)](https://github.com/Harzsha/react-theme-switcher/blob/main/LICENSE)
-[![CI Status](https://github.com/yourusername/react-theme-handler/actions/workflows/ci.yml/badge.svg)](https://github.com/Harzsha/react-theme-switcher/actions)
+[![license](https://img.shields.io/npm/l/react-theme-handler)](https://github.com/Harzsha/react-theme-handler/blob/main/LICENSE)
+[![CI Status](https://github.com/yourusername/react-theme-handler/actions/workflows/ci.yml/badge.svg)](https://github.com/Harzsha/react-theme-handler/actions)
 
 A lightweight, performant theme switcher for React applications with system preference detection and CSS variables support.
 
