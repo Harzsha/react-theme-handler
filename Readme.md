@@ -1,4 +1,4 @@
-# 🌗 rreact-theme-handler
+# 🌗 react-theme-handler
 
 [![npm version](https://img.shields.io/npm/v/react-theme-handler.svg?style=flat)](https://www.npmjs.com/package/react-theme-handler)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/react-theme-handler)](https://bundlephobia.com/package/react-theme-handler)
