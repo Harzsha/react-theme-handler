@@ -1,0 +1,48 @@
+# Source files
+src/
+tsconfig.json
+rollup.config.js
+
+# Testing
+test/
+__tests__/
+__mocks__/
+*.test.*
+*.spec.*
+jest.config.js
+
+# Development configs
+.eslint*
+.prettier*
+.husky/
+.lintstagedrc
+
+# Build system
+node_modules/
+*.log
+*.lock
+
+# Documentation
+docs/
+examples/
+*.md
+LICENSE
+CONTRIBUTING.md
+CHANGELOG.md
+
+# IDE and OS files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+circle.yml
+
+# Temporary files
+.tmp/
+temp/
