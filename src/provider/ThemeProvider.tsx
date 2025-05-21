@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { ThemeContext } from '../context/ThemeContext';
-import { UserTheme, Theme, ThemeProviderProps } from './types';
-import { getSystemTheme } from '../utils/themes';
+import { ThemeContext } from '../context/ThemeContext.js';
+import { UserTheme, Theme } from '../index.js';
+import { getSystemTheme } from '../utils/themes.js';
+import { ThemeProviderProps } from './types.js';
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   defaultTheme = 'system',

@@ -2,27 +2,26 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "strict": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": false,
-    "jsx": "react-jsx",
-    "declaration": true,
-    "outDir": "./dist",
+    "noEmit": true,                      // ✅ Rollup handles emit
+    "sourceMap": true,
     "rootDir": "./src"
   },
-  "include": ["src"],
+  "include": ["src/**/*"],
   "exclude": [
     "node_modules",
-    "**/*.test.ts",
-    "**/*.test.tsx",
-    "**/*.stories.tsx"
+    "**/*.test.*",
+    "**/*.stories.*",
+    "**/__tests__/**",
+    "**/__mocks__/**"
   ]
 }

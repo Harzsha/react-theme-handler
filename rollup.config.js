@@ -1,76 +1,59 @@
+import terser from '@rollup/plugin-terser';
+import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from '@rollup/plugin-typescript';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import terser from '@rollup/plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 
-// Environment checks
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
   input: 'src/index.ts',
   output: [
     {
-      dir: 'dist/cjs',
+      dir: 'dist',
       format: 'cjs',
       exports: 'named',
       sourcemap: true,
       preserveModules: true,
       preserveModulesRoot: 'src',
-      entryFileNames: '[name].cjs'
+      entryFileNames: 'cjs/[name].cjs'
     },
     {
-      dir: 'dist/esm',
-      format: 'esm',
+      dir: 'dist',
+      format: 'es',
       exports: 'named',
       sourcemap: true,
       preserveModules: true,
       preserveModulesRoot: 'src',
-      entryFileNames: '[name].js'
+      entryFileNames: 'esm/[name].js'
     },
   ],
   plugins: [
     peerDepsExternal(),
     resolve({
       browser: true,
-      dedupe: ['react', 'react-dom']
+      dedupe: ['react', 'react-dom'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx']
     }),
-    commonjs({
-      include: /node_modules/,
-      exclude: ['**/*.stories.tsx', '**/*.test.tsx']
-    }),
+    commonjs(),
     postcss({
       modules: false,
       extract: true,
-      minimize: production,
-      config: false
+      minimize: production
     }),
     typescript({
       tsconfig: './tsconfig.json',
+      declaration: true,
+      declarationDir: 'dist/types', // ✅ Now safely inside 'dist'
+      rootDir: 'src',
       exclude: [
         '**/*.stories.tsx',
         '**/*.test.tsx',
         '**/__tests__/**',
         '**/__mocks__/**'
-      ],
-      declaration: true,
-      declarationDir: 'dist/types',
-      rootDir: 'src',
-      composite: false,
-      inlineSources: !production
+      ]
     }),
-    production && terser({
-      format: {
-        comments: false
-      },
-      compress: {
-        drop_console: true
-      }
-    })
-  ].filter(Boolean),
-  watch: {
-    clearScreen: false,
-    include: 'src/**'
-  }
+    production && terser()
+  ].filter(Boolean)
 };
