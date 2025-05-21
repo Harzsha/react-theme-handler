@@ -1,5 +1,5 @@
 {
-  "name": "react-theme-switcher",
+  "name": "react-theme-handler",
   "version": "1.0.0",
   "description": "A lightweight theme switcher for React with system preference detection",
   "main": "dist/cjs/index.cjs",

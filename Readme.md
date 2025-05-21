@@ -1,13 +1,13 @@
-# 🌗 react-theme-switcher
+# 🌗 rreact-theme-handler
 
-[![npm version](https://img.shields.io/npm/v/react-theme-switcher.svg?style=flat)](https://www.npmjs.com/package/react-theme-switcher)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/react-theme-switcher)](https://bundlephobia.com/package/react-theme-switcher)
-[![license](https://img.shields.io/npm/l/react-theme-switcher)](https://github.com/yourusername/react-theme-switcher/blob/main/LICENSE)
-[![CI Status](https://github.com/yourusername/react-theme-switcher/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/react-theme-switcher/actions)
+[![npm version](https://img.shields.io/npm/v/react-theme-handler.svg?style=flat)](https://www.npmjs.com/package/react-theme-handler)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/react-theme-handler)](https://bundlephobia.com/package/react-theme-handler)
+[![license](https://img.shields.io/npm/l/react-theme-handler)](https://github.com/Harzsha/react-theme-switcher/blob/main/LICENSE)
+[![CI Status](https://github.com/yourusername/react-theme-handler/actions/workflows/ci.yml/badge.svg)](https://github.com/Harzsha/react-theme-switcher/actions)
 
 A lightweight, performant theme switcher for React applications with system preference detection and CSS variables support.
 
-![Demo Animation](https://raw.githubusercontent.com/yourusername/react-theme-switcher/main/docs/demo.gif)
+![Demo Animation](https://raw.githubusercontent.com/yourusername/react-theme-handler/main/docs/demo.gif)
 
 ## ✨ Features
 
@@ -24,13 +24,13 @@ A lightweight, performant theme switcher for React applications with system pref
 
 ```bash
 # npm
-npm install react-theme-switcher
+npm install react-theme-handler
 
 # yarn
-yarn add react-theme-switcher
+yarn add react-theme-handler
 
 # pnpm
-pnpm add react-theme-switcher
+pnpm add react-theme-handler
 ```
 
 ## 🎨 Theme Configuration
@@ -63,7 +63,7 @@ pnpm add react-theme-switcher
 ### Basic Setup (Client-side)
 
 ```tsx
-import { ThemeProvider } from 'react-theme-switcher';
+import { ThemeProvider } from 'react-theme-handler';
 import './styles/theme.css';
 
 function App() {
@@ -82,7 +82,7 @@ function App() {
 
 ```tsx
 // _app.tsx
-import { ThemeProvider } from 'react-theme-switcher';
+import { ThemeProvider } from 'react-theme-handler';
 import '../styles/theme.css';
 
 function MyApp({ Component, pageProps }) {
@@ -101,7 +101,7 @@ function MyApp({ Component, pageProps }) {
 ## 🎮 Using the Hook
 
 ```tsx
-import { useThemeSwitcher } from 'react-theme-switcher';
+import { useThemeSwitcher } from 'react-theme-handler';
 
 function ThemeToggle() {
   const { theme, setTheme, isSystem } = useThemeSwitcher();
