@@ -1,6 +1,6 @@
 {
   "name": "react-theme-handler",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A lightweight theme switcher for React with system preference detection",
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/index.js",
