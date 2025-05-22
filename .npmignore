@@ -46,3 +46,7 @@ circle.yml
 # Temporary files
 .tmp/
 temp/
+src/
+*.map
+.DS_Store
+node_modules/

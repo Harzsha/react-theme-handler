@@ -4,6 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
+import del from 'rollup-plugin-delete'; // For cleaning dist folder
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -14,7 +15,8 @@ export default {
       dir: 'dist',
       format: 'cjs',
       exports: 'named',
-      sourcemap: true,
+      sourcemap: production, // Only in production
+      sourcemapExcludeSources: true, // Critical fix
       preserveModules: true,
       preserveModulesRoot: 'src',
       entryFileNames: 'cjs/[name].cjs'
@@ -23,13 +25,15 @@ export default {
       dir: 'dist',
       format: 'es',
       exports: 'named',
-      sourcemap: true,
+      sourcemap: production,
+      sourcemapExcludeSources: true,
       preserveModules: true,
       preserveModulesRoot: 'src',
       entryFileNames: 'esm/[name].js'
     },
   ],
   plugins: [
+    del({ targets: 'dist/*' }), // Clean dist before build
     peerDepsExternal(),
     resolve({
       browser: true,
@@ -45,8 +49,11 @@ export default {
     typescript({
       tsconfig: './tsconfig.json',
       declaration: true,
-      declarationDir: 'dist/types', // ✅ Now safely inside 'dist'
+      declarationDir: 'dist/types',
       rootDir: 'src',
+      sourceMap: production, // Match Rollup's setting
+      inlineSources: false, // Prevents source file references
+      composite: false,
       exclude: [
         '**/*.stories.tsx',
         '**/*.test.tsx',

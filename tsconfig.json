@@ -12,7 +12,7 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,                      // ✅ Rollup handles emit
+    "noEmit": true,                      
     "sourceMap": true,
     "rootDir": "./src"
   },
